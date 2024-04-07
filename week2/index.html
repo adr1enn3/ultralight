@@ -25,20 +25,18 @@
             text-align: center; /* Center text */
             line-height: 200px; /* Center text vertically */
             shape-outside: circle(); /* Apply circular shape */
+			overflow:scroll;
         }
 		.below-box {
             position: absolute;
-            top: 100%; /* Place it below */
-            left: 0;
-            width: 100%;
+            top: 50%; /* Position at the center */
+            left: 50%; /* Position at the center */
+            transform: translate(-50%, -50%); /* Center the text */
+            width: 100%; /* Occupy full width */
             text-align: center; /* Center text */
             font-family: monospace;
-		}
-		* { box-sizing: border-box; }
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
+            overflow: scroll; /* Ensure text is hidden outside the circle */
+        }
 	
 
 		body {
