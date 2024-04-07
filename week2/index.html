@@ -8,10 +8,17 @@
       { position: absolute; 
         top: 20px; 
 		color: transparent; /* Make text transparent */
-		background: linear-gradient(to right, #fbfbfb, #0126fd); /* Apply gradient background */
+		background: linear-gradient(to right, #ff0303, #1e00ff, #ff4305); /* Apply gradient background */
           -webkit-background-clip: text; /* Clip background to text */
           background-clip: text; /* Clip background to text */
           font-size: 20px; /* Adjust font size as needed */
+		  border-radius: 50%; /* Make it circular */
+          width: 200px; /* Adjust width */
+          height: 200px; /* Adjust height */
+          text-align: center; /* Center text */
+          line-height: 200px; /* Center text vertically */
+          margin: auto; /* Center horizontally */
+          shape-outside: circle(); /* Apply circular shape */
         }
 
 		* { box-sizing: border-box; }
