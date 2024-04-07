@@ -1,87 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Cyanotype Animation Test</title>
-	<style>
-       .container 
-      { position: relative; 
-        width: 500px; /* Adjust width */
+    <meta charset="utf-8">
+    <title>Cyanotype Animation Test</title>
+    <style>
+        .container {
+            position: relative;
+            width: 500px; /* Adjust width */
             height: 500px; /* Adjust height */
             margin: 100px auto; /* Adjust margin for positioning */
-	  }
-	  .above-box {
-    
-           
         }
-		.below-box {
+
+        #paper {
+            background-color: yellow;
+            width: 500px;
+            height: 500px;
+            animation-name: expose;
+            animation-duration: 12s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes expose {
+            from {
+                background-color: rgb(255, 210, 47);
+            }
+
+            to {
+                background-color: skyblue;
+            }
+        }
+
+        .gradient-text {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 520px; /* Adjust distance from top */
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
-            height: 100%;
-            color: transparent; /* Make text transparent */
-            background: linear-gradient(to right, #ff0000, #0011ff); /* Apply gradient background */
-            -webkit-background-clip: text; /* Clip background to text */
-            background-clip: text; /* Clip background to text */
-            font-size: 20px; /* Adjust font size as needed */
-            text-align: center; /* Center text */
-            line-height: 19px; /* Center text vertically */
+            text-align: center;
+            font-size: 20px;
+            color: transparent;
+            background: linear-gradient(to right, #ff0000, #0011ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            padding: 20px; /* Adjust padding */
+            box-sizing: border-box;
         }
-	
 
-		body {
-			cursor: wait;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding-bottom: 1em;
-			background-color: rgb(245, 255, 182);
-			/* animation-name: expose;
-  			animation-duration: 12s; */
-		}
+        body {
+            cursor: wait;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 1em;
+            background-color: rgb(245, 255, 182);
+        }
 
-	
-		#paper {
-			background-color: yellow;
-			width: 500px;
-			height: 500px;
-			animation-name: expose;
-  			animation-duration: 12s;
-			/* animation-direction: reverse; */
-			animation-iteration-count: infinite;
-			animation-direction: alternate;
-		}
-		
-		@keyframes expose {
-			from {
-				background-color: rgb(255, 210, 47);
-				/* border-radius: 50%; */
-			}
-			to {
-				background-color: skyblue;
-				/* border-radius: 0; */
-			}
-		}
-		#now {
-			position: absolute;
-			top: 1em;
-			left: 1em;
-			font-family: monospace;
-		}
-		
-		
-		
-	</style>
+        #now {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            font-family: monospace;
+        }
+    </style>
 </head>
 <body>
-	<div id="paper"></div>
-	<p class="below-box"> A minimal demonstration of the photo emulsion color transition in the exposure phase of the cyanotype printmaking process.
-		 At this time the emulsion shifts from yellow-green to bronze-grey. When the exposed object or negative is lifted from the print surface it appears light blue. The infamous Prussian Blue color comes later once the print is rinsed in a cold water bath. The rinse relieves the print of the chartreuse stain of the unreacted ferric ammonium citrate. Adding hydrogen peroxide to the rinse will oxidize the blue further, deepening the color and increasing the permanence. The animation marks the exposure time in the sun, the moment when the UV rays trigger the chemical reaction that forms the light sensitive compound. Unlike this transition, exposure times range from 20-45 minutes...or longer. It all depends on the intensity of the UV rays. Environmental factors such as the time of day, season, and proximity to the sun can influence the quality of the print. Additionally, seasonal variations in weather conditions such as cloud coverage and humidity can also influence the quality of your print.When the suns extremely hot it exposes like lighting.</p>
-	
-	<div id="now"></div>
+<div class="container">
+    <div id="paper"></div>
+</div>
+<div class="gradient-text">
+    A minimal demonstration of the photo emulsion color transition in the exposure phase of the cyanotype printmaking
+    process. At this time, the emulsion shifts from yellow-green to bronze-grey. When the exposed object or negative is
+    lifted from the print surface, it appears light blue. The infamous Prussian Blue color comes later once the print is
+    rinsed in a cold water bath. The rinse relieves the print of the chartreuse stain of the unreacted ferric ammonium
+    citrate. Adding hydrogen peroxide to the rinse will oxidize the blue further, deepening the color and increasing
+    the permanence. The animation marks the exposure time in the sun, the moment when the UV rays trigger the chemical
+    reaction that forms the light-sensitive compound. Unlike this transition, exposure times range from 20-45
+    minutes...or longer. It all depends on the intensity of the UV rays. Environmental factors such as the time of day,
+    season, and proximity to the sun can influence the quality of the print. Additionally, seasonal variations in weather
+    conditions such as cloud coverage and humidity can also influence the quality of your print. When the suns extremely
+    hot it exposes like lighting.
+</div>
 
-	<script src="script.js"></script>
+<div id="now"></div>
 
-</body>	
+<script src="script.js"></script>
+
+</body>
 </html>
